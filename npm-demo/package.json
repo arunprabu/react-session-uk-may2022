@@ -1,0 +1,17 @@
+{
+  "name": "npm-demo",
+  "version": "1.0.0",
+  "description": "my demo package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arun VJ",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "3.6.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.72.1"
+  }
+}

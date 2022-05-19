@@ -1,0 +1,195 @@
+
+Front End App Development
+---
+  HTML - Structural Layer 
+  CSS  - Presentation Layer
+  JS   - Interaction Layer (Vanilla / Raw JS)
+
+
+Browser 
+---
+  HTML Renderer 
+  CSS Parser 
+  JS Engine 
+
+
+ECMAScript by ECMA International
+---
+  * Standard 
+  * Specification 
+  * Grammar for Interaction Layer 
+  
+  Implementation: JavaScript, ActionScript (Adobe), Google Apps Script 
+
+---
+  History 
+  ---
+    Till 2015 
+    --
+      ECMAScript / JavaScript -- were not object oriented 
+
+    From June 2015  (ECMAScript 2015)
+    --
+      ECMAScript / JavaScript -- have become object oriented 
+        (class, extends, import, export )
+
+Primitive Datatypes
+----
+  string, number, boolean, undefined, null, symbol(ES2015), big int (ES2017)
+
+Non-Primitive/Reference Datatypes 
+---
+  Array, Object, RegExp 
+
+
+NodeJS Ecosystem
+----
+ Dependencies 
+  1. Project Dependencies 
+      * some packages are needed for the app's functionality or feature to work 
+      * will be part of the prod build 
+
+      examples: react, @angular/core, vue, bootstrap, jquery, datatables, dropzone, redux 
+
+      All 4 commands are same 
+      --
+        npm i bootstrap
+        npm i bootstrap -S 
+        npm i bootstrap --save 
+        npm install bootstrap --save 
+
+
+      "dependencies": {
+        "bootstrap": "^5.1.3"
+      }
+
+
+  2. Development Dependencies 
+      * some packages are needed only for better,smoother, dev work flow 
+      * needed during development 
+      * will never be part of prod build 
+
+      examples: webpack, typescript, nodemon, jest, 
+
+      All 2 commands are same 
+      --
+        npm i webpack -D 
+        npm i webpack --save-dev 
+        npm install webpack --save-dev 
+
+      "devDependencies": {
+        "webpack": "^5.72.1"
+      }
+
+  3. Global Dependencies 
+      * some packages are needed to be installed system-wide 
+      examples: @angular/cli, create-react-app, nodemon
+
+      npm i create-react-app -g 
+      create-react-app my-app 
+      
+
+NPM - Node Package Manager 
+---
+  * Install packages 
+      npm i bootstrap
+  * Update packages 
+      npm update bootstrap
+  * Uninstall packages 
+      npm uninstall bootstrap
+  
+TODO: Learn where will the global dependencies be installed in windows?
+TODO: npm prune 
+
+===
+Webapps 
+---
+  1. Server Side Rendering Apps (SSR) / Traditional Webapps 
+      * pages will refresh / reload 
+
+      Arch
+      ----
+        1 Server 
+          Response: HTML, CSS, JS + Data
+
+      Codebase 
+      --- 
+        1 Project 
+          Front End (HTML, CSS, JS) + Back End (Java/DotNet/Python/PHP/Ruby/NodeJS) + DB Queries (SQL, NoSQL) 
+
+      Adv 
+      --
+        1. Search Engine Friendly (SEO friendly)
+        2. Initial loading will not be longer 
+
+      Disadv 
+      ---
+        1. Server has to do the heavy-lifting 
+        2. Slower Webapps
+        3. High Bandwidth Consumption 
+        4. Expensive 
+        5. Not offering Better UX 
+        6. Mixed codebase  
+
+
+  2. Client Side Rendering Apps (CSR) / Modern Webapps 
+      * Pages will not refresh / reload 
+
+      Arch
+      --
+        2 Servers 
+          1 Front End Server (Custom Facing App) - Single Page App (SPA)
+            port: 3000
+            Response: HTML, CSS, JS + placeholder for data (wait for data)
+
+          1 Back End Server (RESTful API )
+            port: 8080 
+            Response: Data (JSON)
+
+      Codebase 
+      ---
+        2 Projects 
+          1 Front End Project  -- aka Single Page App (SPA)
+            Codebase: HTML, CSS, JS
+
+          1 Back End Project  --- aka RESTful API 
+            Codebase: Java/DotNet/Python/PHP/Ruby/NodeJS + DB Queries (SQL, NoSQL)
+
+      Adv 
+      ---
+        1. Workload is shared b/w two servers 
+        2. Faster Webapps 
+        3. Less Bandwidth Consumption
+        4. Not Expensive
+        5. Offering Better UX 
+        6. Organized codebase 
+      
+      Disadv 
+      ---
+        1. Not Search Engine Friendly (can be fixed)
+        2. Initial loading will be longer (can be fixed)
+
+
+--
+Single Page App (SPA)
+---
+  Characteristics(7)
+  ---
+    1. Pages should not refresh / reload 
+    2. URL should change 
+    3. History should be maintained w/o page refresh/reload
+    4. Retain header and footer w/o loading again and again 
+    5. Page should show contextual updates in between header and footer 
+    6. Active menu should be set
+    7. Page Title should also be changed
+
+----
+SPA Frameworks / Libraries 
+---
+  #1 React JS (Library - can build View Layer)
+  #2 VueJS (Framework)
+  #3 Angular (Framework)
+  #4 Svelte (Framework)
+
+-------
+
