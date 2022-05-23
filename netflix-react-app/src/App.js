@@ -1,3 +1,11 @@
+/*
+  1. imports
+  2. comp defn 
+      * should return JSX 
+      * JSX will look HTML. But not HTML 
+  3. export
+*/
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -15,7 +23,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learning React!!!!!!
         </a>
       </header>
     </div>
