@@ -6,28 +6,22 @@
   3. export
 */
 
-import logo from './logo.svg';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 import './App.css';
 
+// main comp / root comp / default comp 
+// ideal place for your layout
+// comp defn
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learning React!!!!!!
-        </a>
-      </header>
-    </div>
-  );
+  // Returning JSX is mandatory
+  return(
+    <div>
+      <Header />
+      <h1>Success!</h1>
+      <Footer/>
+    </div>  
+  )
 }
 
 export default App;
