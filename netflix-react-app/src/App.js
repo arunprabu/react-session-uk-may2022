@@ -6,9 +6,10 @@
   3. export
 */
 
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Header from './Components/Shared/Header';
+import Footer from './Components/Shared/Footer';
 import './App.css';
+import Home from './Components/Home/Home';
 
 // main comp / root comp / default comp 
 // ideal place for your layout
@@ -18,7 +19,11 @@ function App() {
   return(
     <div>
       <Header />
-      <h1>Success!</h1>
+
+      <div className='container mt-5 pt-3'>
+        <Home />
+      </div>
+
       <Footer/>
     </div>  
   )

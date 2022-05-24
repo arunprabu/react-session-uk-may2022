@@ -1,0 +1,118 @@
+Agenda
+---
+  
+  Thinking in React 
+  Components 
+  Composable Components 
+
+
+  Custom Components 
+
+---
+Components
+---
+  1. Functional Components [DONE]
+    * coded with functions
+    * were called as stateless components. not any more
+    * were called as dumb components. not any more 
+
+      1. Functional Component with Named Function (Header)
+      2. Functional Component with Anonymous Function (Footer)
+      3. Functional Component with Arrow Function [Recommended] (Menu)
+
+  2. Class Components 
+    * coded with class, extends 
+    * are called as statelful components.
+    * are called as smart components. 
+    * are called as containers 
+
+---
+
+Errors in React 
+--
+1. Compilation Error 
+2. Runtime Error 
+3. Compiled with Problems / Warnings
+
+JSX 
+---
+  * Elements should have closing tags 
+  * JSX expressions must have one parent element.
+  * class should become className 
+  
+
+---
+
+
+Integrating Bootstrap
+--
+  1. in index.html (Not Recommended)
+  2. [TODO] npm i bootstrap and loading the css and js properly inside react app (Recommended) [TODO]
+      Refer: https://create-react-app.dev/docs/adding-bootstrap/
+
+
+---
+
+Project Structure
+--
+  src/
+    Components/    (functional components)
+      Shared/
+        Header 
+        Footer
+        Menu 
+      Home/ 
+        Home
+        ...
+        ...
+        ...
+        ...
+      Dashboard/
+      Auth/
+        Login
+        Signup
+        ResetPW
+      Reports
+      ..
+      ...
+      ..
+      ...
+      ..
+      ..
+    Containers/
+      ..
+      ..
+      ..
+      ..
+
+
+---
+Styling in React JS 
+--
+  1. Inline Styles 
+  2. Internal Styles 
+  3. External Styles [DONE]
+
+
+
+TODOs:
+---
+  1. Learn about loading staic images inside components 
+
+
+Note: 
+  Share prev pjt link for static assets 
+---
+
+Cross Component Communication / Sharing data across components
+---
+  1. Parent to Child Component Communication [DONE]
+      using Props
+
+  2. Child to Parent Component Communication [TODO]
+      using Props, Events, Callback
+
+  3. Any to Any Component Communication
+      3.1 using Context API of React JS 
+      3.2 using Redux Framework or its alternatives (MobX, Flux)
+
