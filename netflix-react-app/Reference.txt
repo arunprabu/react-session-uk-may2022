@@ -22,7 +22,7 @@ Components
 
   2. Class Components 
     * coded with class, extends 
-    * are called as statelful components.
+    * are called as stateful components.
     * are called as smart components. 
     * are called as containers 
 
@@ -79,7 +79,7 @@ Project Structure
       ...
       ..
       ..
-    Containers/
+    Containers/    (class components)
       ..
       ..
       ..
@@ -114,5 +114,22 @@ Cross Component Communication / Sharing data across components
 
   3. Any to Any Component Communication
       3.1 using Context API of React JS 
-      3.2 using Redux Framework or its alternatives (MobX, Flux)
+      3.2 using Redux Framework or its alternatives (MobX, Flux)  
+
+---
+Naming Conventions
+---
+  * Variables, Methods - camelCase
+      * string, number, obj  - appName, phone, contact
+      * boolean - isValid, isLoggedIn, hasToken, isAuth
+      * arrays - colors, contacts or colorList, contactList 
+  * Components, Classes - PascalCase
+  * File Names of Components - PascalCase 
+  * Folder Names* - PascalCase 
+  * Event Handlers - camelCase 
+      Should have handle prefix or Handler Suffix 
+      handleAddToFav() or else addToFavHandler()
+  * Never use snake_case
+--
+
 

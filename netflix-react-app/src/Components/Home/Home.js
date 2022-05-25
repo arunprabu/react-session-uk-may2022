@@ -1,4 +1,6 @@
 import React from 'react'
+import RecentMovieList from '../../Containers/RecentMovieList';
+import TrendingShowList from '../../Containers/TrendingShowList';
 import Program from './Program';
 
 const Home = () => {
@@ -50,6 +52,15 @@ const Home = () => {
         time="released 2 months ago">
         Walter White, a chemistry teacher, discovers that he has cancer and decides to get into the meth-making business to repay his medical debts...
       </Program>
+
+      <hr/>
+      <h2>Recently Released Movies | States and Events Demo</h2>
+      <RecentMovieList />
+
+      <hr/>
+      <h2>Trending Movies | States, Events, Changing States Immutably, Conditional Rendering, Lists and Keys Demo</h2>
+      <TrendingShowList />
+      
     </div>
   )
 }
