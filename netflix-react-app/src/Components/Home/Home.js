@@ -2,6 +2,7 @@ import React from 'react'
 import RecentMovieList from '../../Containers/RecentMovieList';
 import TrendingShowList from '../../Containers/TrendingShowList';
 import Program from './Program';
+import Subscription from './Subscription';
 
 const Home = () => {
 
@@ -60,6 +61,11 @@ const Home = () => {
       <hr/>
       <h2>Trending Movies | States, Events, Changing States Immutably, Conditional Rendering, Lists and Keys Demo</h2>
       <TrendingShowList />
+
+      <hr/>
+      <h2>Subscription | Styling in React JS</h2>
+      <Subscription />
+      
       
     </div>
   )

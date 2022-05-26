@@ -89,8 +89,8 @@ Project Structure
 ---
 Styling in React JS 
 --
-  1. Inline Styles 
-  2. Internal Styles 
+  1. Inline Styles [DONE]
+  2. Internal Styles [DONE]
   3. External Styles [DONE]
 
 
@@ -98,6 +98,10 @@ Styling in React JS
 TODOs:
 ---
   1. Learn about loading staic images inside components 
+  2. npm i bootstrap and loading the css and js properly inside react app (Recommended) [TODO]
+      Refer: https://create-react-app.dev/docs/adding-bootstrap/
+  3. Child to Parent Comp Commn - with a new Show Component 
+  4. Optimize Menu Component with MenuItem Component 
 
 
 Note: 
@@ -133,3 +137,9 @@ Naming Conventions
 --
 
 
+1. loading state (show spinner, loader, progress bar )
+2. positive state 
+3. negative state (error case )
+
+
+===

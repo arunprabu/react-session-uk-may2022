@@ -11,9 +11,10 @@ const Footer = function(){
     <footer className="text-center">
       <hr/>
       <Menu />
-      <p>Copyright {copyrightYear} | Arun</p>
+      <p>Copyright { copyrightYear } | Arun</p>
     </footer>
   )
+  
 }
 
 export default Footer;

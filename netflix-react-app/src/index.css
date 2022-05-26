@@ -1,2 +1,7 @@
 /* global styles */
 /* ideal place for overriding bootstrap styles */
+
+.info{
+  background-color: coral;
+  text-align: center;
+}
