@@ -1,4 +1,6 @@
 import React from 'react'
+import LifeCycleHooks from '../../Containers/LifeCycleHooks';
+import MyProfile from '../../Containers/MyProfile';
 import RecentMovieList from '../../Containers/RecentMovieList';
 import TrendingShowList from '../../Containers/TrendingShowList';
 import Program from './Program';
@@ -59,13 +61,20 @@ const Home = () => {
       <RecentMovieList />
 
       <hr/>
-      <h2>Trending Movies | States, Events, Changing States Immutably, Conditional Rendering, Lists and Keys Demo</h2>
+      <h2>Trending Shows | States, Events, Changing States Immutably, Conditional Rendering, Lists and Keys Demo</h2>
       <TrendingShowList />
 
       <hr/>
       <h2>Subscription | Styling in React JS</h2>
       <Subscription />
-      
+
+      <hr />
+      <h2>My Profile | Two Way Binding</h2>
+      <MyProfile />
+
+      <hr />
+      <h2>LifeCycle Hooks Demo</h2>
+      <LifeCycleHooks />
       
     </div>
   )

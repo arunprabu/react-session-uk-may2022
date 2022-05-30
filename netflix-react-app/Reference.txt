@@ -113,7 +113,7 @@ Cross Component Communication / Sharing data across components
   1. Parent to Child Component Communication [DONE]
       using Props
 
-  2. Child to Parent Component Communication [TODO]
+  2. Child to Parent Component Communication [TODO][DONE]
       using Props, Events, Callback
 
   3. Any to Any Component Communication

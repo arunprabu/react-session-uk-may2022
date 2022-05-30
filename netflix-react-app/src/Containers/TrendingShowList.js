@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 
 class TrendingShowList extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    
     /* comp-wide state data */
     this.state = {
       movies: [
