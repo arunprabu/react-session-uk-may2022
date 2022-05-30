@@ -143,3 +143,6 @@ Naming Conventions
 
 
 ===
+
+Learn about Lifecycle Hooks here
+Refer: https://reactjs.org/docs/react-component.html
