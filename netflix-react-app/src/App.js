@@ -9,7 +9,9 @@
 import Header from './Components/Shared/Header';
 import Footer from './Components/Shared/Footer';
 import './App.css';
-import Home from './Components/Home/Home';
+
+import { BrowserRouter } from 'react-router-dom';
+import {appRoutes} from './Routes/appRoutes';
 
 // main comp / root comp / default comp 
 // ideal place for your layout
@@ -17,15 +19,16 @@ import Home from './Components/Home/Home';
 function App() {
   // Returning JSX is mandatory
   return(
-    <div>
+    <BrowserRouter>
       <Header />
 
       <div className='container mt-5 pt-3'>
-        <Home />
+        {/* Config the routes */}
+        { appRoutes }
       </div>
 
       <Footer/>
-    </div>  
+    </BrowserRouter> 
   )
 }
 

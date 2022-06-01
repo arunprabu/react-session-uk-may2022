@@ -91,14 +91,14 @@ class LifeCycleHooks extends Component {
 
     // handling success state
     return (
-      <div>
+      <>
         <h3>{this.state.featureName}</h3>
 
         <div>
           <h4>Learn about Lifecycle Hooks here</h4>
           <a href='https://reactjs.org/docs/react-component.html'>Read more about Lifecycle Hooks</a>
         </div>
-      </div>
+      </>
     )
   }
 }

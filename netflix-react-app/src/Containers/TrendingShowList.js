@@ -45,7 +45,6 @@ class TrendingShowList extends Component {
     });
   }
 
-
   render() {
     // ideal place for you to loop using map -- lists 
     // ideal place for any comp specific transformations in JSX 

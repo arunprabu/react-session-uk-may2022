@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom'; // React package for working with the DOM.
 import './index.css';
 import App from './App'; 
 import reportWebVitals from './reportWebVitals'; // analytics
+import ErrorBoundary from './Containers/ErrorBoundary';
 
 ReactDOM.render(
-  <App/>
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>
   ,
   document.getElementById('root')
 )

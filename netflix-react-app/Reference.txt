@@ -1,12 +1,82 @@
-Agenda
+
+Webapps 
 ---
-  
-  Thinking in React 
-  Components 
-  Composable Components 
+  1. Server Side Rendering Apps (SSR) / Traditional Webapps 
+      * Pages will reload / refresh 
+
+      Arch 
+        1 Server 
+        ---
+          Resp: HTML, CSS, JS + Data 
+
+      Codebase 
+        1 Project 
+        ----
+          Front End (HTML, CSS, JS ) + Back End (Java/Dotnet/PHP/Python/Ruby) + DB Queries (SQL, NoSQL)  
+
+      Disadv 
+      ---
+        1. Server has to do the heavy-lifting 
+        2. Slower Webapps 
+        3. More Bandwidth Consumption 
+        4. More Expensive 
+        5. Not a better user experience 
 
 
-  Custom Components 
+  2. Client Side Rendering Apps (CSR) / Modern Webapps 
+      * Pages will not reload / refresh 
+
+      Arch 
+      --
+        2 Servers 
+          1 Front End Server (port 3000) - Single Page App (SPA)
+              Resp: HTML, CSS, JS, placeholder for data (wait for data)
+
+          1 Back End Server (port 8080 ) - RESTful API 
+              Resp: Data (JSON) 
+
+      Codebase 
+      --
+        2 Projects 
+          1 Front End Project (HTML, CSS, JS)
+          1 Back End Project (Java/DotNet/PHP/Python/Ruby + SQL, NoSQL)
+      
+      Adv
+      ---
+        1. Workload is shared between two servers 
+        2. Faster Webapps 
+        3. Less Bandwidth Consumption 
+        4. Less Expensive 
+        5. Better User Experience to end users 
+
+      Disadv 
+      --
+        1. Not Search Engine Friendly (can be fixed)
+        2. Initial Loading will take longer (can be fixed)
+
+---
+Single Page App (SPA)
+---
+  Characteristics (7)
+  --
+    1. Page should not reload / refresh 
+    2. URL should change 
+    3. History should be maintained without page refresh 
+    4. Header and footer should be retained
+    5. Page should be contextually updated in between header and footer (in b/w section should be updated)
+    6. Active menu should be set [TODO]
+    7. Page Title should be changed [TODO]
+        Refer: react-helmet 
+
+  SPA Frameworks / Libraries 
+  ---
+    #1 React JS (Library)
+    #2 VueJS  (Framework)
+    #3 Angular (Framework)
+
+----
+
+
 
 ---
 Components
@@ -94,7 +164,6 @@ Styling in React JS
   3. External Styles [DONE]
 
 
-
 TODOs:
 ---
   1. Learn about loading staic images inside components 
@@ -146,3 +215,40 @@ Naming Conventions
 
 Learn about Lifecycle Hooks here
 Refer: https://reactjs.org/docs/react-component.html
+
+
+Routing in ReactJS 
+--
+  Step 0: 
+    npm i react-router-dom
+
+  Step 1: 
+    Identifying the URLs and the Menu Items 
+
+    Home              => localhost:3000/
+    HOC Demo          => localhost:3000/hoc-demo
+    Unit Testing Demo => localhost:3000/unit-testing 
+    Hooks Demo        => localhost:3000/hooks
+    Context API Demo  => localhost:3000/context-api-demo
+    Styled Comp Demo  => localhost:3000/styled-comp-demo
+
+  Step 2: 
+    Let's setup the menu with proper URLs  in Menu Component 
+
+  Step 3: 
+    LEt's create components for the urls 
+
+  Step 4: 
+    Setting up routes in App comp (a.k.a) config the routes 
+    Let's put the whole app under BrowserRouter of react-router-dom 
+
+  Step 5: 
+    Check the app. Pages will still refresh. Let's fix it 
+    Replace a href with Link to 
+
+TODO: Active menu should be set [TODO]
+TODO: Page Title should be changed [TODO]
+        Refer: react-helmet 
+
+----
+

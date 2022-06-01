@@ -16,7 +16,7 @@ class MyProfile extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <h3>Profile Info</h3>
         <p>Update Profile Name</p>
         {/*  the following input w/o onChange Handler will become just
@@ -24,7 +24,7 @@ class MyProfile extends Component {
         <input value={this.state.profileName} 
           onChange={this.handleProfileNameChange}/>
         <p>Profile Name: {this.state.profileName}</p>
-      </div>
+      </>
     )
   }
 }
