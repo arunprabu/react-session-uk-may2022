@@ -1,34 +1,25 @@
 // Functional Component with Arrow Function 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import MenuItem from './MenuItem';
 
 const Menu = () => {
 
-  // const routes = [
-  //   { id: 1, name: 'Home', url: '/' },
-  //   { id: 2, name: 'HOC Demo', url: '/hoc-demo' },
-  // ]
+  const routes = [
+    { id: 1, name: 'Home', url: '/' },
+    { id: 2, name: 'HOC Demo', url: '/hoc-demo' },
+    { id: 3, name: 'Unit Testing Demo', url: '/unit-testing' },
+    { id: 4, name: 'Todo App (Hooks Demo)', url: '/hooks' },
+    { id: 5, name: 'Products (Context API Demo)', url: '/context-api-demo' },
+    { id: 6, name: 'Support (StyledComponents Demo)', url: '/styled-comp-demo' }
+  ]
 
   return(
     <ul className="navbar-nav me-auto mb-2 mb-md-0">
-      <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/hoc-demo">HOC Demo</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/unit-testing ">Unit Testing Demo</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/hooks">Todo App (Hooks Demo)</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/context-api-demo">Products (Context API Demo)</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/styled-comp-demo">Support (StyledComponents Demo)</Link>
-      </li>
+
+      { routes.map( (route) => {
+          return <MenuItem key={route.id} name={route.name} url={route.url}/>
+        })
+      }
     </ul>
   )
 }

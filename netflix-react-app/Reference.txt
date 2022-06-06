@@ -252,3 +252,153 @@ TODO: Page Title should be changed [TODO]
 
 ----
 
+Static Type Checking 
+==========
+
+1. Strictly typed lang
+    Ex: Java, C#, TypeScript (JS + Datatyping)
+
+    Syntax: 
+      // Static Typing 
+      var myName: string = 'John';
+      myName = 'Steve'; 
+      myName = 100; // error 
+
+2. Loosely-typed Lang 
+    Ex: JS, PHP, Python 
+
+    Primitive DataTypes: string, number, boolean, undefined, null, symbol, big int 
+
+    Syntax: 
+      // Dynamically typed 
+      var myName ='John'; 
+      myName = 'Steve'; 
+      myName = 100; 
+      myName = true; 
+      myName = [];
+      myName = {};
+      myName = function(){
+      } 
+
+===
+ 
+    
+Static Type Checking 
+--
+  React + TypeScript 
+  React + PropTypes 
+  React + FlowJS  [NOT RECOMMENDED]
+  
+
+
+TS / Flow 
+--
+  function add(a: number, b: number): number {
+    return a + b;
+  }
+  add(10, 20); 
+  
+
+
+=======
+
+Software Development Lifecycle / Methodology 
+--
+Project: Calc 
+Docs Given: FRD, HLD 
+
+  Analyse => Design => Development => Testing => Deployment => Maintainance 
+  ---
+  dev => qa => (bugs) => dev => qa => (bugs) => dev => qa => (bugs) => dev => qa => (QA PASSED) => Deployment 
+  -----
+  Disadv
+  --
+    1. Manual efforts 
+    2. QA team has real requirments 
+    3. dev team is not dveloping against the real req 
+
+
+Modern Software Dev Methodology 
+=======
+  Devs Prepare Test Cases / Test Specs for Add Feature (REQUIREMENTS)
+  --- 
+    1. inputs should be numbers 
+    2. output should also be a number 
+    3. other than numbers are entered as input, add button should be disabled 
+
+  Dev Begins for Add Feature
+  ---
+    function add(a: number, b: number): number{
+      return a + b;
+    }
+
+    add(10, 20); // 30
+    
+
+  Test Begins for Add Feature
+  ---
+    add(10, 20); // 30
+    add("10", 20); // bug
+    add("ABC", "XYZ"); // bug
+    add(undefined, true); // bug
+
+ 
+----
+Automated Testing
+============
+  0. Static-Type Checking (TypeScript, FlowJS, PropTypes )
+  
+  1. Unit Testing 
+      * Testing small unit of a component 
+      * Individual units / components are tested in isolation 
+      * Bug Reduction Density => 40 - 80% 
+
+      Tools: JEST (Test Runner and Framework) + React Testing Library (Testing Utility), Jasmine JS (Framework) + Karma (Test Runner)
+
+  2. Integration Testing 
+      * Different units, modules, components are tested as combined entity 
+      * behavior of the app would be tested 
+      * to expose issues in integration between units / components / modules 
+      * Usually done with mounting or rendering a component
+      * examples: test if a child comp can update parent comp 
+
+      Tools: JEST + React Testing Library or JEST + EnzymeJS (jquery like tool - dom querying)
+
+  3. End to End / E2E / Functional Testing 
+      * Testing the whole app 
+      * Usually a multi-step test 
+      * Tests are done in simulated browser, there may or may not any UI. 
+
+      Tools: CypressJS, Protractor, Selenium
+
+
+Approach 
+====
+  devs write test cases => devs write functionality => (TOOLS) => Instant Feedback of SUCCESS / FAILURE 
+
+  1. Test Driven Development (TDD) 
+      * TDD is a programming practice that instructs devs to write new code only if the automated test fails 
+      Write Test Case => (INSTANT FEEDBACK OF FAILURE/Bug) => Write Functionality => (INSTANT FEEDBACK OF SUCCESS) => [CODE COMPLETE]
+
+  2. Behavior Driven Development (BDD)
+      * BDD, in which an app is documented, designed around the behaviour the end user expects to experience. 
+
+      Write Test Case => (INSTANT FEEDBACK OF FAILURE/Bug) => Write Functionality => (INSTANT FEEDBACK OF SUCCESS) => [CODE COMPLETE]
+  
+// Where to write test cases? 
+// How to Write test cases?
+// How to test our app using tools against the test cases?
+
+
+Component
+---
+
+  props 
+  JSX   
+  events
+  snapshot testing 
+
+  
+
+===
+
