@@ -380,11 +380,21 @@ Approach
       * TDD is a programming practice that instructs devs to write new code only if the automated test fails 
       Write Test Case => (INSTANT FEEDBACK OF FAILURE/Bug) => Write Functionality => (INSTANT FEEDBACK OF SUCCESS) => [CODE COMPLETE]
 
+      Tools: JEST, Mocha + Chai 
+
+
   2. Behavior Driven Development (BDD)
       * BDD, in which an app is documented, designed around the behaviour the end user expects to experience. 
 
       Write Test Case => (INSTANT FEEDBACK OF FAILURE/Bug) => Write Functionality => (INSTANT FEEDBACK OF SUCCESS) => [CODE COMPLETE]
+
+      Tools: JasmineJS  
   
+
+Testing Pattern: 
+---
+  AAA -- Arrange, Act, Assert 
+
 // Where to write test cases? 
 // How to Write test cases?
 // How to test our app using tools against the test cases?

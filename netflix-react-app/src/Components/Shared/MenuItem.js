@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types'; 
 
 const MenuItem = ({ url, name}) => {
 
   return (
     <li className="nav-item">
-      <Link className="nav-link" to={url}>{name}</Link>
+      <NavLink className="nav-link" to={url}>{name}</NavLink>
     </li>
   )
 }

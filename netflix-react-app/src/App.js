@@ -7,7 +7,7 @@
 */
 
 import Header from './Components/Shared/Header';
-import Footer from './Components/Shared/Footer';
+import Footer from './Components/Shared/Footer/Footer';
 import './App.css';
 
 import { BrowserRouter } from 'react-router-dom';

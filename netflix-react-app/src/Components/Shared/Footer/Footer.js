@@ -1,7 +1,7 @@
 // Functional Component with Anonymous Function 
 
 import React from 'react';
-import Menu from './Menu';
+import Menu from '../Menu';
 
 const Footer = function(){
 
@@ -11,7 +11,9 @@ const Footer = function(){
     <footer className="text-center">
       <hr/>
       <Menu />
-      <p>Copyright { copyrightYear } | Arun</p>
+      <p>Copyright 
+        <span data-testid="copyrightEl">{ copyrightYear }</span> 
+      | Arun</p>
     </footer>
   )
   
