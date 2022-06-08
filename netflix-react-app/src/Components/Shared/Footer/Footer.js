@@ -4,7 +4,7 @@ import React from 'react';
 import Menu from '../Menu';
 
 const Footer = function(){
-
+  
   const copyrightYear = 2022;
 
   return(

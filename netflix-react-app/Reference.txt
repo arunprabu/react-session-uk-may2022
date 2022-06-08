@@ -186,7 +186,7 @@ Cross Component Communication / Sharing data across components
       using Props, Events, Callback
 
   3. Any to Any Component Communication
-      3.1 using Context API of React JS 
+      3.1 using Context API of React JS (React Hooks) 
       3.2 using Redux Framework or its alternatives (MobX, Flux)  
 
 ---
@@ -407,8 +407,9 @@ Component
   JSX   
   events
   snapshot testing 
-
+  Mocking API 
   
 
 ===
+
 

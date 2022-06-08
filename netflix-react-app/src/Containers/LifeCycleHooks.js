@@ -73,6 +73,7 @@ class LifeCycleHooks extends Component {
   render() {
     // Render method will be called automatically
     // for render to be called, this comp should extend React Component
+    // NEVER UPDATE STATE
     console.log('============= 2 & 5 Inside Render ');
 
     // handling loading state

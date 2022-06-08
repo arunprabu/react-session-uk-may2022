@@ -38,6 +38,8 @@ describe('OrganizationComponent', () => {
     render(<Organization />);
     expect(screen.getByPlaceholderText('Enter Country Name')).toBeTruthy();
   });
+
+  
   
 
   // Prereq: Hooks 
