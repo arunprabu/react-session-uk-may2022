@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrganizationComponent should have right company snapshot 1`] = `
+<div
+  className="text-center"
+>
+  <h3>
+    Welcome to our Organization's Official Page!!!
+  </h3>
+  <h5
+    data-testid="companyNameEl"
+  >
+    Cognizant Technologies
+  </h5>
+  <p
+    data-testid="employeeCountEl"
+    style={
+      Object {
+        "color": "green",
+        "padding": "10px",
+        "textAlign": "center",
+      }
+    }
+  >
+    Employees: 400000+
+  </p>
+  <a
+    className="btn btn-primary btn-lg"
+    href="/"
+    role="button"
+  >
+    JOIN NOW
+  </a>
+  <br />
+  <br />
+  <input
+    onChange={[Function]}
+    placeholder="Enter Country Name"
+    type="text"
+    value="USA"
+  />
+  <p
+    data-testid="visitEl"
+  >
+    Visit Cognizant 
+    USA
+     Website
+  </p>
+</div>
+`;

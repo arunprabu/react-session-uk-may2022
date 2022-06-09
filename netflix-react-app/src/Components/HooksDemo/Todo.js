@@ -2,6 +2,7 @@ import React, { useReducer, useRef } from 'react'
 import todoReducer from '../../Reducers/todoReducer';
 
 const Todo = () => {
+  console.log('Program Started')
   // creating ref for input field to capture data in a fn comp 
   const todoInput = useRef('');
 
@@ -14,6 +15,22 @@ const Todo = () => {
 
   const handleAddTodo = () => {
     console.log(todoInput.current.value);
+
+    // hit the rest api 
+    // save the data
+    // get the res 
+
+    todoDispatch({
+      type: 'ADD_TODO',
+      payload: todoInput.current.value
+    });
+  }
+
+  let myTodos = null;
+  if(todoState && todoState.length > 0){
+    myTodos = todoState.map((todo) => {
+      return(<li className='list-group-item' key={todo.id}>{todo.title}</li>)
+    })
   }
 
   return (
@@ -31,8 +48,14 @@ const Todo = () => {
         </div>
         
         <ul className='list-group'>
-          <li className='list-group-item'>todo 1</li>
-          <li className='list-group-item'>todo 2</li>
+          {
+            todoState && todoState.length > 0? 
+            myTodos
+            :
+            <div className='alert alert-danger'>
+              No Todos Found. You can add one!
+            </div> 
+          }
         </ul>
       </div>
     </div>

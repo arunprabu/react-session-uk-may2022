@@ -9,9 +9,15 @@
 */
 
 const todoReducer = (state = [], action) => {
-  return state;
+  console.log('Inside todoReducer');
 
-  
+  switch(action.type){
+    case 'ADD_TODO':
+      return [...state, {id: new Date(), title: action.payload}];
+    
+    default:
+      return state;
+  } 
 }
 
 export default todoReducer;
