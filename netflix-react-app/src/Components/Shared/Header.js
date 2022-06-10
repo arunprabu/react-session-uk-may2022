@@ -4,7 +4,7 @@ import Menu from './Menu';
 
 function Header() {
   const appName = 'Netflix';
-
+  
   // let' return JSX
   return (
     <header>
@@ -17,6 +17,8 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <Menu />
           </div>
+
+          <button className='btn btn-danger'>Cart(0)</button>
         </div>
       </nav>
     </header>

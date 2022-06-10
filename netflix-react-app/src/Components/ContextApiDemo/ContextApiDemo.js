@@ -1,8 +1,16 @@
 import React from 'react'
+import Products from './Products'
 
 const ContextApiDemo = () => {
   return (
-    <div>ContextApiDemo</div>
+    <div>
+      <h1>ContextApiDemo</h1>
+
+      <Products />
+    </div>
+
+
+
   )
 }
 

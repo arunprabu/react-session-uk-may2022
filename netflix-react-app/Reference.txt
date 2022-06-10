@@ -413,3 +413,21 @@ Component
 ===
 
 
+Context API - Steps 
+---
+  Let's share the data across comp 
+
+  1. Create context with any data or null 
+      createContext()
+
+  2. Provide the data to the whole app -- it is called as app wide data 
+      Using  
+      <Context.Provider value={ }>
+        <App />
+      </Context.Provider>
+      
+  3. Consume the context data in your comps 
+      useContext();
+
+===
+

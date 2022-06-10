@@ -12,23 +12,32 @@ import './App.css';
 
 import { BrowserRouter } from 'react-router-dom';
 import {appRoutes} from './Routes/appRoutes';
+import { CartContext } from './Contexts/CartContext';
+import { useReducer, useState } from 'react';
+import reducerReducer from './Reducers/cartReducer';
 
 // main comp / root comp / default comp 
 // ideal place for your layout
 // comp defn
 function App() {
+
+  // const [cartState, cartDispatch] = useReducer(reducerReducer);
+  // console.log(cartState);
+
   // Returning JSX is mandatory
   return(
-    <BrowserRouter>
-      <Header />
+    <CartContext.Provider value={{}}>
+      <BrowserRouter>
+        <Header />
 
-      <div className='container mt-5 pt-3'>
-        {/* Config the routes */}
-        { appRoutes }
-      </div>
+        <div className='container mt-5 pt-3'>
+          {/* Config the routes */}
+          { appRoutes }
+        </div>
 
-      <Footer/>
-    </BrowserRouter> 
+        <Footer/>
+      </BrowserRouter> 
+    </CartContext.Provider>
   )
 }
 
