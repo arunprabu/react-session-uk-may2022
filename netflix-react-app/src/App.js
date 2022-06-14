@@ -39,6 +39,7 @@ function App() {
 
         <div className='container mt-5 pt-3'>
           {/* Config the routes */}
+          
           { appRoutes }
         </div>
 
