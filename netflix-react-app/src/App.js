@@ -13,20 +13,27 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import {appRoutes} from './Routes/appRoutes';
 import { CartContext } from './Contexts/CartContext';
-import { useReducer, useState } from 'react';
-import reducerReducer from './Reducers/cartReducer';
+import { useReducer } from 'react';
+import cartReducer from './Reducers/cartReducer';
 
 // main comp / root comp / default comp 
 // ideal place for your layout
 // comp defn
 function App() {
 
-  // const [cartState, cartDispatch] = useReducer(reducerReducer);
-  // console.log(cartState);
+  const [_cartState, _cartDispatch] = useReducer(cartReducer);
+  console.log(_cartState);
+
+  const cartData = {
+    cartState: _cartState,
+    cartDispatch: _cartDispatch
+  }
+
+  console.log('Before Return');
 
   // Returning JSX is mandatory
   return(
-    <CartContext.Provider value={{}}>
+    <CartContext.Provider value={cartData}>
       <BrowserRouter>
         <Header />
 

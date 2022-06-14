@@ -1,10 +1,14 @@
 // Functional Component with Named Function
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../Contexts/CartContext';
 import Menu from './Menu';
 
 function Header() {
   const appName = 'Netflix';
   
+  const cartData = useContext(CartContext);
+  console.log(cartData);
+
   // let' return JSX
   return (
     <header>
@@ -18,7 +22,8 @@ function Header() {
             <Menu />
           </div>
 
-          <button className='btn btn-danger'>Cart(0)</button>
+          {/* Rendering the count conditionally */}
+          <button className='btn btn-danger'>Cart({cartData?.cartState?.length})</button>
         </div>
       </nav>
     </header>

@@ -1,10 +1,11 @@
-import React, { useReducer } from 'react'
-import reducerReducer from '../../Reducers/cartReducer';
+import React, { useContext} from 'react'
+import { CartContext } from '../../Contexts/CartContext';
 
 const Products = () => {
 
-  const [cartState, cartDispatch] = useReducer(reducerReducer);
-  console.log(cartState);
+  // subscribing to the context data
+  const cartData = useContext(CartContext);
+  console.log(cartData);
 
   const pdtList = [
     {
@@ -25,7 +26,11 @@ const Products = () => {
 
   const handleAddToCart = (pdt) => {
     console.log(pdt);
-    cartDispatch({
+    // connect with rest api
+    // send this pdt to backend to save 
+    // get the res. 
+
+    cartData.cartDispatch({
       type: 'ADD_TO_CART',
       payload: pdt
     });
