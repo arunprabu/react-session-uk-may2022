@@ -1,0 +1,375 @@
+Step 0:
+--
+  npm i redux@4.1.2 react-redux@7.2.6
+
+  The above mentioned versions are compatible with React v17 
+
+  redux -> Core Framework
+  react-redux -> patches up react with redux seamlessly 
+
+Step 1: 
+--
+  src/configureStore.js 
+
+  import { createStore } from "redux";
+
+  const store = createStore(); // Special param reducer is needed
+
+Step 2: 
+--
+create src/configureStore.js 
+
+  // Step 1.1: Let's create store 
+  import { createStore } from "redux";
+
+  // Step 1.2 Let's export configure store function
+  export default function configureStore(){
+    const store = createStore(
+
+    ); // Special param reducer is needed
+    
+    console.log(store);
+    return store;
+  }
+
+
+Step 3: 
+---
+// step 3: Let's have the reducer in store/posts/reducer.js 
+
+const postReducer = (state = {}, action) => {
+
+  switch(action.type){
+    case 'ADD_POST': 
+      return state;
+
+    case 'LIST_POSTS':
+      return state;
+
+    default:
+      return state;
+  }
+
+}
+
+export default postReducer;
+
+--
+Step 4: 
+  LEt's have all possible action types specific to posts feature 
+  in src/store/posts/types.js have the following 
+
+  // Define however naming conventions you'd like for your action types, but
+  // personally, I use the `@@context/ACTION_TYPE` convention, to follow the convention
+  // of Redux's `@@INIT` action.
+  export const CREATE_REQUEST = '@@posts/CREATE_REQUEST';  // for create post
+  export const CREATE_SUCCESS = '@@posts/CREATE_SUCCESS';   // // for create post - success
+  export const CREATE_ERROR = '@@posts/CREATE_ERROR';   // // for create post - error
+
+  export const FETCH_REQUEST = '@@posts/FETCH_REQUEST';  // for get all posts
+  export const FETCH_SUCCESS = '@@posts/FETCH_SUCCESS';  // for get all posts success
+  export const FETCH_ERROR = '@@posts/FETCH_ERROR';      // for post related error
+
+  export const FETCH_REQUEST_BY_ID = '@@posts/FETCH_REQUEST_BY_ID';   // for get post by id 
+  export const FETCH_SUCCESS_BY_ID = '@@posts/FETCH_SUCCESS_BY_ID';   // for get post by id - success 
+  export const FETCH_ERROR_BY_ID = '@@posts/FETCH_ERROR_BY_ID';   // for get post by id - error 
+
+  export const UPDATE_REQUEST_BY_ID = '@@posts/UPDATE_REQUEST_BY_ID';  // for update post by id
+  export const UPDATE_SUCCESS_BY_ID = '@@posts/UPDATE_SUCCESS_BY_ID'   // // for update post by id - success
+  export const UPDATE_ERROR_BY_ID = '@@posts/UPDATE_ERROR_BY_ID'   // // for update post by id - error
+
+===
+Step 5: 
+  Refer the action types in reducer 
+
+  import { CREATE_REQUEST, FETCH_REQUEST, FETCH_REQUEST_BY_ID, FETCH_SUCCESS, UPDATE_REQUEST_BY_ID } from "./types";
+
+  const postReducer = (state = {}, action) => {
+
+    switch(action.type){
+      case CREATE_REQUEST:
+      case FETCH_REQUEST: 
+      case FETCH_REQUEST_BY_ID:
+      case UPDATE_REQUEST_BY_ID: 
+        // set is loading to true 
+        return state;
+
+      case FETCH_SUCCESS:
+        // set is loading to false and will return array of obj inside state 
+        return state;
+
+      default:
+        return state;
+    }
+
+  }
+
+  export default postReducer;
+
+Step 6: 
+---
+  import { combineReducers } from "redux";
+  import postReducer from "./posts/reducer";
+
+  // Step 6: Whenever an action is dispatched, redux will update each top-level app state property
+  // using the reducer with the matching name. 
+  export const createRootReducer = (history) => {
+    return combineReducers({
+      posts: postReducer
+    })
+  }
+
+
+
+Step 7: 
+--
+  setting up initial state and history into the store 
+
+    export default function configureStore(history, initialState){ // Step 7: history and initial state 
+      const store = createStore(
+        // Step 7: Let's exec createRootReducer(history) 
+        createRootReducer(history),
+        initialState
+      ); // Special param reducer is needed
+      
+      console.log(store);
+      return store;
+    }
+
+Step 8:
+---
+  Let's work on to get the store data 
+
+  in src/index.js have the following 
+
+  import configureStore from './configureStore';
+  import { createBrowserHistory } from 'history';
+
+  const history = createBrowserHistory();
+
+  // getting store data with history
+  const store = configureStore(history);
+  console.log(store);
+
+Step 9: 
+--
+  in src/index.js -- let's provide the store data to the whole app. 
+
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>    { /* providing store data */}
+        <App />
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+
+Step 10:
+---
+
+  in PostList.js 
+
+  have the following 
+
+    import React, { Component } from 'react'
+    import { connect } from 'react-redux';
+    import { Link } from 'react-router-dom';
+    import { FETCH_REQUEST } from '../store/posts/types';
+
+    export class PostList extends Component {
+
+      componentDidMount() {
+        console.log('2. Inside componentDidMount');
+        // dispatch an action type 'FETCH_REQUEST' 
+        console.log(this.props);
+        
+        // this.props.dispatch({
+        //   type: FETCH_REQUEST
+        // })
+      }
+
+      render() {
+        console.log('Inside render');
+        console.log(this.props);
+
+        if (this.props.isLoading) {
+          return (
+            <div className="text-center spinner-border text-success" role="status">
+            </div>
+          )
+        }
+
+        return (
+          <div>
+            <h3>Post List</h3>
+            <div className="list-group text-left">
+              <div className="list-group-item list-group-item-action text-start">
+                <div className="d-flex w-100 justify-content-between">
+                  <h5 className="mb-1">
+                    <Link to={`/posts/1`}>post 1</Link>
+                  </h5>
+                  <small>Post Id: 1</small>
+                </div>
+                <p className="mb-1 text-left">sample post</p>
+              </div>
+
+              <div className='alert alert-warning'>
+                No Posts Found. You can add one!
+              </div>
+            </div>
+          </div>
+        )
+      }
+    }
+
+    // writing a fn to subscribe to the store data.
+    // this has to mandatorily return the store data - that will become props 
+    const mapStateToProps = ({ posts }) => {
+      console.log('1. inside mapStateToProps');
+      return {
+        postList: posts.postList,
+        isLoading: posts.isLoading,
+        errors: posts.errors
+      }
+    }
+
+    // connect() will get you dispatch fn as part of props 
+    // connect(mapStateToProps) will get you dispatch fn and store data and convert them to props 
+    export default connect(mapStateToProps)(PostList);
+
+
+
+
+
+
+======
+Sidenotes 
+    Async Calls / Side Effects in Redux 
+    ===
+      Middleware is needed 
+
+      1. redux-thunk 
+
+
+      2. redux-saga (preferred for multiple/ subsequent network calls)
+          
+===
+
+Step 11:
+---
+  Let's work on Redux-Saga 
+
+  npm in redux-saga 
+
+  and also in store/posts/sagas.js 
+  have the following 
+
+    import { call, put, takeEvery, all, fork } from "redux-saga/effects";
+    import { callApi } from "../../utils/api";
+    import { FETCH_REQUEST } from "./types";
+
+    const POST_API_URL = 'https://jsonplaceholder.typicode.com/posts';
+
+    // worker saga -- can connect with rest api, and dispatch 
+    function* handleFetch(){
+      debugger;
+
+      try{
+        debugger;
+        // to call ajax logic -- use redux-saga's call()
+        const res = yield call( callApi, 'get', POST_API_URL);
+        debugger;
+        if(res.error){
+          // dispatch with error -- use put() from redux-saga
+          
+        }else{
+          // dispatch with success / data -- use put() from redux-saga
+        }
+
+      }
+      catch(err){
+        if(err){
+          // dispatch with error -- use put() from redux-saga
+        }
+      }
+    }
+
+
+    // watcher saga -- watch specific action type and run the saga 
+    function* watchFetchRequest(){
+      debugger;
+      yield takeEvery(FETCH_REQUEST, handleFetch);
+    }
+
+    // feature saga 
+    function* postsSaga(){
+      debugger;
+      yield all([
+        fork(watchFetchRequest)
+      ])
+    }
+
+    export default postsSaga;
+
+===
+
+Step 12: 
+--
+  creating root saga in store/index.js itself 
+
+    // creating root saga here itself.. it can be in rootSaga.js file also 
+    export function* rootSaga(){
+      yield all([
+        fork(postsSaga),
+        // another feature's saga can come here
+      ])
+    }
+
+Step 13: 
+--
+  Setup actions for the fetch request 
+  import { FETCH_REQUEST } from "./types"
+
+  export const fetchRequest = () => {
+    debugger;
+    return {
+      type: FETCH_REQUEST
+    }
+  }
+
+Step 14: 
+--  
+  Finish the redux-saga middleware integration 
+
+  // Step 1.1: Let's create store 
+  import { createStore, applyMiddleware } from "redux";
+  import createSagaMiddleware from 'redux-saga';
+  import { composeWithDevTools } from 'redux-devtools-extension';
+
+  import { createRootReducer, rootSaga } from "./store";
+
+  // Step 1.2 Let's export configure store function
+  export default function configureStore(history, initialState){
+
+    const composeEnhancers = composeWithDevTools({
+      // Specify here name, actionsBlacklist, actionsCreators and other options
+    });
+
+    const sagaMiddleware = createSagaMiddleware();
+
+    const store = createStore(
+      // Step 7: Let's exec createRootReducer(history) 
+      createRootReducer(history),
+      initialState,
+      composeEnhancers(applyMiddleware(sagaMiddleware))
+    ); // Special param reducer is needed
+    
+    // NEVER FORGET TO RUN THE ROOT SAGA
+    sagaMiddleware.run(rootSaga);
+    return store;
+  }
+
+
+==
+Step 15: 
+---
