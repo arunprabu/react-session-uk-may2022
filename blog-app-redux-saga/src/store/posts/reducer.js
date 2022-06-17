@@ -1,6 +1,6 @@
 // step 3: Let's have the reducer 
 
-import { CREATE_REQUEST, FETCH_ERROR, FETCH_REQUEST, FETCH_REQUEST_BY_ID, FETCH_SUCCESS, UPDATE_REQUEST_BY_ID } from "./types";
+import { CREATE_ERROR, CREATE_REQUEST, CREATE_SUCCESS, FETCH_ERROR, FETCH_REQUEST, FETCH_REQUEST_BY_ID, FETCH_SUCCESS, UPDATE_REQUEST_BY_ID } from "./types";
 
 const initialState = {
   postList: [],
@@ -11,7 +11,6 @@ const initialState = {
 }
 
 const postReducer = (state = initialState, action) => {
-  console.log('Inside postReducer');
   switch(action.type){
     case CREATE_REQUEST:
     case FETCH_REQUEST: 
@@ -25,6 +24,20 @@ const postReducer = (state = initialState, action) => {
       return {...state, isLoading: false, postList: action.payload};
 
     case FETCH_ERROR: 
+      return {...state, isLoading: false, error: action.payload};
+
+    case CREATE_SUCCESS: 
+      let addedPostState = {
+        ...state,
+        isLoading: false,
+        postList: [
+          ...state.postList,
+          action.payload
+        ]
+      }
+      return addedPostState;
+
+    case CREATE_ERROR: 
       return {...state, isLoading: false, error: action.payload};
 
     default:

@@ -1,20 +1,39 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { createPostRequest } from '../store/posts/actions';
 
 export class PostForm extends Component {
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = {
+      title: this.postTitle.value,
+      body: this.postBody.value
+    }
+
+    console.log(formData); // Form data is ready -- we can work on dispatch
+    console.log(this.props);
+
+    
+    this.props.dispatch(createPostRequest(formData));
+
+    this.postTitle.value = '';
+    this.postBody.value = '';
+  }
 
   render() {
     return (
       <div>
         <h3>Create Post!</h3>
   
-        <form className='text-left'>
+        <form className='text-left' onSubmit={this.handleSubmit}>
           <input required type="text"
             placeholder="Enter Post Title"
-            className='form-control' /><br />
+            className='form-control' ref={(inputEl) => this.postTitle = inputEl }/><br />
 
           <textarea required rows="5" cols="28"
             placeholder="Enter Post"
-            className='form-control' /><br />
+            className='form-control' ref={(textAreaEl) => this.postBody = textAreaEl }/><br />
           <button className='btn btn-primary' type='submit'>Add Post</button>
         </form>
       </div>
@@ -23,4 +42,4 @@ export class PostForm extends Component {
 }
 
 
-export default PostForm;
+export default connect()(PostForm);

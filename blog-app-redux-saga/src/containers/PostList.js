@@ -47,11 +47,14 @@ export class PostList extends Component {
         <h3>Post List</h3>
         <div className="list-group text-left">
           
-          {posts}
-
-          <div className='alert alert-warning'>
-            No Posts Found. You can add one!
-          </div>
+          { this.props.postList && this.props.postList.length > 0?
+            posts
+            :
+            <div className='alert alert-warning'>
+              No Posts Found. You can add one!
+            </div>
+          }
+          
         </div>
       </div>
     )
